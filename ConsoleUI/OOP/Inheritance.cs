@@ -32,7 +32,7 @@ public abstract class Human // : Object
 public class User : Human // Tekli miras
 {
     public string Email { get; set; }
-    protected string Password { get; private set; }
+    public string Password { get; set; }
     protected override bool Telemetry { get; set; } = true;
 
     public void ForgetPassword()
@@ -40,11 +40,6 @@ public class User : Human // Tekli miras
         Console.WriteLine(
             "Şifre yenileme bağlantısı gönderildi."
             );
-    }
-
-    public void SetPassword(string newPassword) // Encapsulation örneği
-    {
-        this.Password = HashPassword(newPassword);
     }
 
     public override void GetTelemetryData()
@@ -56,11 +51,6 @@ public class User : Human // Tekli miras
         Console.WriteLine(
             "Kullanıcı, sayfayı yeniledi."
             );
-    }
-
-    private string HashPassword(string newPassword)
-    {
-        return newPassword + "Hash123XYZ";
     }
 }
 

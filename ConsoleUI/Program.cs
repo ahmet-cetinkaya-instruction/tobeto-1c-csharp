@@ -45,3 +45,13 @@ Human human2 = new Customer(lastName: "Çetinkaya", firstName: "Ahmet"); // Cons
 human1.GetTelemetryData();
 human1.GetTelemetryData(bypass: true); // Method Overloading
 
+IUserDal userDal =
+    new InMemoryUserDal();
+//new SqlUserDal();
+// Polymorphisim // Çok biçimlilik
+
+IMailService mailService = new MailKitMailService();
+
+IUserManager userManager = new UserManager(userDal, mailService); // Dependency Injection 
+
+userManager.SendForgotPasswordEmail(seller);
