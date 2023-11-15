@@ -34,3 +34,14 @@ Console.WriteLine(seller.Email);
 Console.WriteLine(seller.Name);
 
 seller.ForgetPassword();
+
+//User user1 = getActiveUser();
+User user1 = new Customer();
+user1.SetPassword("password");
+
+Human human1 = new Customer();
+//Human human2 = new Customer("Ahmet", "Çetinkaya");
+Human human2 = new Customer(lastName: "Çetinkaya", firstName: "Ahmet"); // Constructor Overloading
+human1.GetTelemetryData();
+human1.GetTelemetryData(bypass: true); // Method Overloading
+

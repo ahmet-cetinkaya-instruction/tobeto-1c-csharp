@@ -20,6 +20,13 @@ public abstract class Human // : Object
 
         Console.WriteLine("Sistemde 30 saniye durdu.");
     }
+    public virtual void GetTelemetryData(bool bypass)
+    {
+        if (Telemetry == false || bypass == true)
+            return;
+
+        Console.WriteLine("Sistemde 30 saniye durdu.");
+    }
 }
 
 public class User : Human // Tekli miras
@@ -61,6 +68,17 @@ public class Customer : User // is-a ilişkisi // Çok düzeyli miras
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+    public Customer() {
+        FirstName = string.Empty;
+        LastName = string.Empty;
+    }
+
+    public Customer(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
 
     //public void CheckPasswordStrong()
     //{
