@@ -1,0 +1,1 @@
+﻿DataAccess katmanı veri kaydetme ve okuma işlemlerini gerçekleştirdiğimiz katman olacak.
